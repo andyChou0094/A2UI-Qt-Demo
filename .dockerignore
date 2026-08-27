@@ -1,0 +1,14 @@
+*
+!.cache/
+!.cache/tools/
+!.cache/tools/linux/
+!.cache/tools/linux/7zzs
+!.cache/tools/cmake-3.16.9-Linux-x86_64.tar.gz
+!.cache/qt-archives/
+!.cache/qt-archives/qtbase-Linux-RHEL_7_4-GCC-Linux-RHEL_7_4-X86_64.7z
+!.cache/qt-archives/icu-linux-Rhel7.2-x64.7z
+!.cache/debian-packages/
+!.cache/debian-packages/*.deb
+!toolchains/
+!toolchains/Dockerfile
+!toolchains/qt.conf

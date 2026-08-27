@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "surfaceId": "main",
+  "root": "layout-1",
+  "nodes": [
+    {
+      "id": "layout-1",
+      "type": "Column",
+      "children": [
+        "calculator-main",
+        "note-pad-1",
+        "history-main"
+      ],
+      "gap": "medium"
+    },
+    {
+      "id": "calculator-main",
+      "type": "Calculator"
+    },
+    {
+      "id": "note-pad-1",
+      "type": "NotePad"
+    },
+    {
+      "id": "history-main",
+      "type": "CalculationHistory"
+    }
+  ]
+}

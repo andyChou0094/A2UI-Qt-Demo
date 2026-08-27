@@ -1,33 +1,19 @@
-# C++ / Qt build outputs
+# Local build products and downloaded toolchain caches.
+.cache/
 build/
-cmake-build-*/
-CMakeFiles/
-CMakeCache.txt
-*.o
-*.obj
-*.a
-*.so
-*.dll
-*.exe
-*.user
+build-*/
 
-# Python environments and caches
-__pycache__/
-*.py[cod]
+# Python development environments and caches.
 .venv/
-venv/
+__pycache__/
 .pytest_cache/
+*.py[cod]
+aqtinstall.log
 
-# Runtime data and local credentials
+# Runtime data.
 *.db
-*.sqlite
-*.sqlite3
-.env
-.env.*
-!.env.example
+*.db-shm
+*.db-wal
 
-# Editor and operating-system files
-.idea/
-.vscode/
-.DS_Store
-Thumbs.db
+# Local demo provider configuration (contains the developer API key).
+config/provider.local.env

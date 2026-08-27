@@ -1,0 +1,18 @@
+{
+  "version": "0.1",
+  "surfaceId": "main",
+  "root": "layout-1",
+  "nodes": [
+    {
+      "id": "layout-1",
+      "type": "Column",
+      "children": [
+        "calculation-stats-1"
+      ]
+    },
+    {
+      "id": "calculation-stats-1",
+      "type": "CalculationStats"
+    }
+  ]
+}

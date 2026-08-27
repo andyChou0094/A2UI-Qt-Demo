@@ -1,0 +1,57 @@
+{
+  "version": "0.1",
+  "surfaceId": "main",
+  "root": "layout-1",
+  "nodes": [
+    {
+      "id": "layout-1",
+      "type": "Column",
+      "children": [
+        "layout-2",
+        "layout-3"
+      ],
+      "gap": "large"
+    },
+    {
+      "id": "layout-2",
+      "type": "Row",
+      "children": [
+        "calculator-main"
+      ]
+    },
+    {
+      "id": "calculator-main",
+      "type": "Calculator"
+    },
+    {
+      "id": "layout-3",
+      "type": "Row",
+      "children": [
+        "history-main",
+        "layout-4"
+      ],
+      "gap": "medium"
+    },
+    {
+      "id": "history-main",
+      "type": "CalculationHistory"
+    },
+    {
+      "id": "layout-4",
+      "type": "Column",
+      "children": [
+        "stats-main",
+        "clock-main"
+      ],
+      "gap": "small"
+    },
+    {
+      "id": "stats-main",
+      "type": "CalculationStats"
+    },
+    {
+      "id": "clock-main",
+      "type": "Clock"
+    }
+  ]
+}

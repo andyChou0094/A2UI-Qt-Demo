@@ -1,0 +1,47 @@
+{
+  "version": "0.1",
+  "surfaceId": "main",
+  "root": "root",
+  "nodes": [
+    {
+      "id": "root",
+      "type": "Column",
+      "children": [
+        "top",
+        "history-main",
+        "notes-main"
+      ],
+      "gap": "medium"
+    },
+    {
+      "id": "top",
+      "type": "Row",
+      "children": [
+        "calculator-main",
+        "stats-main",
+        "clock-main"
+      ],
+      "gap": "medium"
+    },
+    {
+      "id": "calculator-main",
+      "type": "Calculator"
+    },
+    {
+      "id": "stats-main",
+      "type": "CalculationStats"
+    },
+    {
+      "id": "clock-main",
+      "type": "Clock"
+    },
+    {
+      "id": "history-main",
+      "type": "CalculationHistory"
+    },
+    {
+      "id": "notes-main",
+      "type": "NotePad"
+    }
+  ]
+}

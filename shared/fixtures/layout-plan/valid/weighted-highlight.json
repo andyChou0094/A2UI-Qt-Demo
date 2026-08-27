@@ -1,0 +1,10 @@
+{
+  "version": "0.1",
+  "root": {
+    "kind": "layout", "type": "Row", "justify": "start",
+    "children": [
+      {"kind": "existing", "id": "calculator-main", "type": "Calculator", "weight": 2},
+      {"kind": "existing", "id": "history-main", "type": "CalculationHistory", "weight": 1}
+    ]
+  }
+}

@@ -1,0 +1,2 @@
+# Host-side downloader used to fetch Qt's official online repository archives.
+aqtinstall==3.3.0

@@ -1,0 +1,23 @@
+{
+  "version": "0.1",
+  "surfaceId": "main",
+  "root": "layout-1",
+  "nodes": [
+    {
+      "id": "layout-1",
+      "type": "Column",
+      "children": [
+        "clock-1",
+        "note-pad-1"
+      ]
+    },
+    {
+      "id": "clock-1",
+      "type": "Clock"
+    },
+    {
+      "id": "note-pad-1",
+      "type": "NotePad"
+    }
+  ]
+}

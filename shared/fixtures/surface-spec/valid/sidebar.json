@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "surfaceId": "main",
+  "root": "root",
+  "nodes": [
+    {"id": "root", "type": "Row", "children": ["sidebar", "content"], "gap": "large", "justify": "start"},
+    {"id": "sidebar", "type": "Column", "children": ["stats-main", "clock-main"], "gap": "small", "weight": 1},
+    {"id": "content", "type": "Column", "children": ["calculator-main", "history-main"], "gap": "medium", "weight": 3},
+    {"id": "stats-main", "type": "CalculationStats"},
+    {"id": "clock-main", "type": "Clock"},
+    {"id": "calculator-main", "type": "Calculator"},
+    {"id": "history-main", "type": "CalculationHistory"}
+  ]
+}

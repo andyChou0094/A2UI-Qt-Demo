@@ -1,0 +1,101 @@
+QWidget {
+    background: #E9EDF2;
+    color: #17202A;
+    selection-background-color: #2D6CDF;
+    selection-color: #FFFFFF;
+    font-family: "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+    font-size: 14px;
+}
+QWidget#hostShell { background: #E9EDF2; }
+QWidget#workspaceControlPane {
+    background: #17202A;
+    color: #F5F7FA;
+    border: 0;
+}
+QWidget#surfaceStage {
+    background: #F9FBFD;
+    border: 1px solid #CBD3DD;
+}
+QLabel#workspaceTitle {
+    background: transparent;
+    color: #FFFFFF;
+    font-family: "Noto Serif CJK SC", "Noto Serif SC", serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+QLabel#consoleDescription, QLabel#diagnosticSummary {
+    background: transparent;
+    color: #B8C2CE;
+}
+QLabel#surfaceMetadata {
+    background: #F9FBFD;
+    color: #44515E;
+    border-bottom: 1px solid #CBD3DD;
+    padding: 8px 10px;
+    font-family: "Noto Sans Mono CJK SC", "Noto Sans Mono", monospace;
+}
+QWidget#businessCard {
+    background: #FFFFFF;
+    color: #17202A;
+    border: 1px solid #CBD3DD;
+    border-radius: 6px;
+}
+QLabel#businessCardTitle {
+    background: transparent;
+    color: #17202A;
+    font-weight: 600;
+    font-size: 15px;
+}
+QLabel#compositionProgress {
+    background: transparent;
+    color: #F5F7FA;
+    border: 1px solid #8492A2;
+    border-radius: 4px;
+    padding: 6px 8px;
+}
+QLabel#compositionProgress[statusKind="busy"] { border: 2px solid #2D6CDF; }
+QLabel#compositionProgress[statusKind="success"] { border: 2px solid #16866B; }
+QLabel#compositionProgress[statusKind="error"] { border: 2px solid #C64B40; }
+QLineEdit, QTextEdit, QPlainTextEdit, QListWidget, QScrollArea {
+    background: #FFFFFF;
+    color: #17202A;
+    border: 1px solid #9CA8B5;
+    border-radius: 4px;
+    padding: 6px;
+}
+QWidget#workspaceControlPane QLineEdit,
+QWidget#workspaceControlPane QPlainTextEdit {
+    background: #222D38;
+    color: #FFFFFF;
+    border-color: #667483;
+}
+QLineEdit:focus, QTextEdit:focus, QPlainTextEdit:focus,
+QListWidget:focus, QPushButton:focus {
+    border: 2px solid #4F8CFF;
+}
+QPushButton {
+    min-height: 28px;
+    background: #2D6CDF;
+    color: #FFFFFF;
+    border: 1px solid #2459B8;
+    border-radius: 4px;
+    padding: 6px 10px;
+}
+QPushButton:hover { background: #245FC8; }
+QPushButton:pressed { background: #1D4FAE; }
+QPushButton:disabled {
+    background: #D7DDE4;
+    color: #687482;
+    border: 1px dashed #8995A2;
+}
+QWidget#workspaceControlPane QPushButton#diagnosticsToggle,
+QWidget#workspaceControlPane QPushButton#importSurfaceButton,
+QWidget#workspaceControlPane QPushButton#exportSurfaceButton,
+QWidget#workspaceControlPane QPushButton#restoreDefaultButton {
+    background: #263441;
+    border-color: #667483;
+}
+QWidget#workspaceControlPane QPushButton:hover { border-color: #4F8CFF; }
+QSplitter::handle { background: #B7C0CA; width: 5px; }
+QSplitter::handle:hover { background: #2D6CDF; }
+QScrollBar:vertical, QScrollBar:horizontal { background: #E1E6EC; }

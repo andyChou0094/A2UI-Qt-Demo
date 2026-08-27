@@ -1,0 +1,9 @@
+{
+  "version": "0.1",
+  "surfaceId": "main",
+  "root": "row-a",
+  "nodes": [
+    {"id": "row-a", "type": "Row", "children": ["column-b"]},
+    {"id": "column-b", "type": "Column", "children": ["row-a"]}
+  ]
+}

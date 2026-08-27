@@ -1,0 +1,60 @@
+{
+  "catalogVersion": "0.1",
+  "components": [
+    {
+      "type": "Calculator",
+      "version": "1.0",
+      "description": "使用预定义按钮完成本地四则运算并持久化成功结果。",
+      "multiple": true,
+      "allowedDisplayFields": [],
+      "layoutHints": {
+        "roles": ["input", "primary"],
+        "preferredAxis": "either"
+      }
+    },
+    {
+      "type": "CalculationHistory",
+      "version": "1.0",
+      "description": "查询最近计算记录并提供备注修改和删除操作。",
+      "multiple": true,
+      "allowedDisplayFields": [],
+      "layoutHints": {
+        "roles": ["list", "detail"],
+        "preferredAxis": "vertical"
+      }
+    },
+    {
+      "type": "CalculationStats",
+      "version": "1.0",
+      "description": "展示计算记录总数和最新记录摘要。",
+      "multiple": true,
+      "allowedDisplayFields": [],
+      "layoutHints": {
+        "roles": ["summary"],
+        "preferredAxis": "either"
+      }
+    },
+    {
+      "type": "Clock",
+      "version": "1.0",
+      "description": "展示持续更新且保持运行状态的本地时钟。",
+      "multiple": true,
+      "allowedDisplayFields": [],
+      "layoutHints": {
+        "roles": ["status", "compact"],
+        "preferredAxis": "horizontal"
+      }
+    },
+    {
+      "type": "NotePad",
+      "version": "1.0",
+      "description": "保存尚未提交的本地文本编辑状态。",
+      "multiple": true,
+      "allowedDisplayFields": [],
+      "layoutHints": {
+        "roles": ["editor", "detail"],
+        "preferredAxis": "vertical"
+      }
+    }
+  ]
+}

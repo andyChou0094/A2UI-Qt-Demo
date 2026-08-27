@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/a2ui">
+    <file>theme.qss</file>
+    <file alias="default-surface.json">../../shared/default-surface.json</file>
+  </qresource>
+</RCC>

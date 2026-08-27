@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://a2ui.local/schema/surface-spec-v0.schema.json",
+  "title": "Qt UI Composition Protocol v0 SurfaceSpec",
+  "x-rendererSemantics": {
+    "gapLogicalPixels": {"none": 0, "small": 4, "medium": 8, "large": 16},
+    "containerMargin": 0,
+    "stretchPreservesLeafSizePolicy": true
+  },
+  "x-semanticRules": {
+    "rootWeightAllowed": false,
+    "positiveChildWeight": {
+      "requiredParentJustify": "start",
+      "allowsMainAxisSpacer": false
+    },
+    "emptyContainerSpacerCount": 0,
+    "singleChildJustify": {
+      "spaceBetween": "start",
+      "spaceAround": "center",
+      "spaceEvenly": "center"
+    },
+    "maximumDepth": 8
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "surfaceId", "root", "nodes"],
+  "properties": {
+    "version": {"const": "0.1"},
+    "surfaceId": {"const": "main"},
+    "root": {"$ref": "#/$defs/nodeId"},
+    "nodes": {
+      "type": "array",
+      "maxItems": 32,
+      "items": {"$ref": "#/$defs/node"}
+    }
+  },
+  "$defs": {
+    "nodeId": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+    },
+    "weight": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10,
+      "default": 0
+    },
+    "layoutNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "children"],
+      "properties": {
+        "id": {"$ref": "#/$defs/nodeId"},
+        "type": {"enum": ["Row", "Column"]},
+        "children": {
+          "type": "array",
+          "maxItems": 32,
+          "items": {"$ref": "#/$defs/nodeId"}
+        },
+        "gap": {
+          "enum": ["none", "small", "medium", "large"],
+          "default": "medium"
+        },
+        "align": {
+          "enum": ["start", "center", "end", "stretch"],
+          "default": "stretch"
+        },
+        "justify": {
+          "enum": ["start", "center", "end", "spaceBetween", "spaceAround", "spaceEvenly"],
+          "default": "start"
+        },
+        "weight": {"$ref": "#/$defs/weight"}
+      }
+    },
+    "businessNode": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type"],
+      "properties": {
+        "id": {"$ref": "#/$defs/nodeId"},
+        "type": {
+          "enum": ["Calculator", "CalculationHistory", "CalculationStats", "Clock", "NotePad"]
+        },
+        "weight": {"$ref": "#/$defs/weight"}
+      }
+    },
+    "node": {
+      "oneOf": [
+        {"$ref": "#/$defs/layoutNode"},
+        {"$ref": "#/$defs/businessNode"}
+      ]
+    }
+  }
+}

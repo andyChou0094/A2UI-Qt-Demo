@@ -1,0 +1,8 @@
+{
+  "version": "0.1",
+  "surfaceId": "main",
+  "root": "root",
+  "nodes": [
+    {"id": "root", "type": "Column", "children": [], "weight": 1}
+  ]
+}

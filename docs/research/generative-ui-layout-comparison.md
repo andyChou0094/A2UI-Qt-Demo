@@ -2,6 +2,13 @@
 
 调研日期：2026-08-14
 
+> 文档状态：历史决策输入。本文记录 2026-08-14 调研时的外部框架情况，用于解释项目为何
+> 选择受限 `Row/Column`、Catalog 和稳定 ID。项目当前事实以 `openspec/specs/`、ADR 和
+> [技术架构](../technical-architecture.md)为准；外部框架版本、链接和能力可能在调研后继续变化。
+
+本文是项目外部灵感与跨方案比较的唯一完整入口。它回答“可借鉴哪些机制、为何主动收窄”；
+项目内部组件、合同、算法和当前实现则只在[技术架构](../technical-architecture.md)展开。
+
 ## 结论先行
 
 对当前 Qt Demo，最合适的第一阶段布局边界不是任意坐标、任意尺寸或任意 QSS，而是：
@@ -16,15 +23,63 @@
 
 这一方向与 A2UI Basic Catalog 的 `Row/Column + justify/align/weight` 最接近，也与 json-render 的“小型布局组件 + 枚举属性 + Catalog 校验”一致。
 
+## 本项目如何借鉴与主动收窄
+
+本项目借鉴 A2UI 与 json-render 的共同骨架：开发者用 Catalog/Registry 限制能力，模型只产生
+声明式结构，本地 Renderer 再映射为受信任组件；同时借鉴稳定 ID、扁平引用和提交前完整校验。
+这些机制适合“选择已有能力”，但不会自动解决 QWidget 的 QObject ownership、reparent、焦点、
+局部状态或 ABI 问题，因此项目额外以 `(id,type)` 复用和事务式提交保护原生对象。
+
+项目也主动放弃了更通用方案的能力：不实现 A2UI 的多 Surface、独立 Data Model、Action 和流式
+增量消息，不采用 json-render 的绑定/action 运行时，也不把 MCP Apps 的任意 HTML/CSS/JS View
+移植到 Qt。每次请求只生成受限 LayoutPlan，再由确定性 Compiler 生成单个完整 SurfaceSpec；
+布局只开放 Row/Column 与枚举属性。表达力较低，但审计面、失败回退和旧 QWidget 复用边界更清楚。
+
 ## 比较总览
 
-| 方案 | 它是否定义内部布局 | 布局与尺寸模型 | 增量更新/身份 | 白名单与样式边界 | 对 Qt Demo 的意义 |
-| --- | --- | --- | --- | --- | --- |
-| Google A2UI | 核心协议不固定布局；所选 Catalog 定义布局组件 | 官方 Basic Catalog 提供 `Row`、`Column`、`List`、`Card` 等；`Row/Column` 有 `justify`、`align`，直接子节点有相对 `weight`；无通用像素尺寸或 breakpoint | 扁平组件表、稳定组件 `id`、`updateComponents` 添加或更新；`updateDataModel` 单独更新数据 | Catalog 是组件、函数和属性的允许列表；Basic Catalog 倾向语义 variant，不开放任意样式 | 最值得直接借鉴的协议骨架；Qt 的 QWidget 实例复用需要自行加强 |
-| MCP Apps / OpenAI Apps SDK | **不定义 iframe 内部布局** | 服务端返回完整 HTML/JS/CSS View；宿主只协商 iframe 显示模式和容器尺寸 | 每次渲染的是 UI resource/View 实例；UI 内状态由 View 自己管理，工具结果通过消息更新 | iframe sandbox、CSP 和域名 allowlist；但 View 内可使用完整 Web 布局能力 | 适合“把完整微前端嵌入聊天”，不适合作为 QWidget 组件树布局协议 |
-| AG-UI | **不定义 UI 组件或布局** | 事件与状态传输协议；布局由前端应用或叠加的 A2UI/json-render 等协议决定 | 消息有 `messageId`；状态支持 snapshot + RFC 6902 delta | `Custom/Raw` 可承载扩展，但语义和安全由应用负责 | 可作为流式传输层，不能回答 Row/Column、尺寸或样式问题 |
-| Vercel AI SDK Generative UI | **不定义通用布局协议** | 模型调用预定义 tool，应用把 tool 结果映射到开发者编写的 React 组件；布局是 React 代码的职责 | 聊天消息和 tool parts 有 ID/状态；没有跨平台组件树 diff 合约 | 模型只调用已提供的 tools，组件代码由开发者控制 | 可借鉴“模型只选择预定义能力”；不能直接借鉴布局 schema |
-| Vercel Labs json-render | 定义可配置的受控组件树；具体布局由 Catalog 决定 | 扁平 `{root,elements}`；官方 shadcn Catalog 有 `Stack(direction/gap/align/justify)`、`Grid(columns 1-6/gap)`；也允许自定义 schema | 元素键即稳定 ID；支持流式 spec，并提供 patch/merge/diff 编辑模式 | 模型只能使用 Catalog 中的组件和 schema 属性；是否开放 raw style 取决于开发者是否把它写进 Catalog | 与 Qt 自有协议非常接近；适合借鉴受控 gap/枚举和原子校验 |
+| 方案 | 生成/交付产物 | 身份与状态 | 渲染与安全边界 | 对旧 QWidget 的意义 |
+|---|---|---|---|---|
+| Google A2UI | Catalog 约束的 Surface 消息 | 稳定组件 ID，结构和数据可增量更新 | 客户端 Catalog 校验并原生渲染 | 可借鉴协议骨架；对象实例复用仍需 Qt 自行保证 |
+| json-render | `root/elements` Spec 与 patch 流 | element key、运行时 state/binding/action | Catalog schema + 平台 Registry | 可借鉴封闭 Spec；React 状态模型不能替代 QObject 生命周期 |
+| MCP Apps | tool 关联的 HTML UI Resource | View 自有状态，经 Host 传递 tool 结果 | iframe sandbox、CSP、权限协商 | 适合隔离完整 Web View，不是 QWidget 树布局协议 |
+| AG-UI | Agent—frontend 事件与状态 delta | 消息 ID、snapshot/JSON Patch | 自定义事件语义由应用定义 | 可参考进度和传输，不定义组件布局 |
+| Vercel AI SDK UI | tool 参数映射到 React 组件 | message/tool part 状态 | 模型只调用预定义 tool | 可借鉴能力选择，不提供跨平台 Surface 合同 |
+| 本项目 | LayoutPlan → 完整 SurfaceSpec | Compiler 分配稳定 ID，业务状态留在 QWidget | 双 Validator、WidgetRegistry、原子提交 | 直接面向受认证 QWidget；能力最窄，需额外处理 Qt 生命周期 |
+
+### Google A2UI
+
+- 布局：核心协议不固定布局，Catalog 决定可用组件；Basic Catalog 提供 Row、Column、List、Card 等。
+- 身份：使用扁平组件表和稳定组件 ID，支持组件与数据更新。
+- 边界：Catalog 是组件、函数和属性的允许列表，Basic Catalog 偏向语义 variant。
+- 对本项目的价值：最适合借鉴协议骨架，但 QWidget 对象身份保持仍需项目自行定义。
+
+### MCP Apps / OpenAI Apps SDK
+
+- 布局：不定义 iframe 内部布局，View 可以使用完整 HTML、CSS 和 JavaScript。
+- 身份：状态主要由每个 View 自行管理，工具结果通过消息更新。
+- 边界：依赖 iframe sandbox、CSP 和域名 allowlist。
+- 对本项目的价值：适合完整微前端隔离，不适合作为 QWidget 组件树布局协议。
+
+### AG-UI
+
+- 布局：不定义 UI 组件或布局，主要负责事件、运行状态和消息传输。
+- 身份：消息有 ID，应用状态支持 snapshot 与 JSON Patch delta。
+- 边界：`Custom/Raw` 的安全语义需要应用自己定义。
+- 对本项目的价值：未来可参考传输层，但不能回答 Row/Column、尺寸或样式问题。
+
+### Vercel AI SDK Generative UI
+
+- 布局：模型调用预定义 tool，应用把结果映射为开发者编写的 React 组件。
+- 身份：有消息和 tool part 状态，但没有跨平台组件树 diff 合同。
+- 边界：模型只能调用应用提供的工具，组件代码仍由开发者控制。
+- 对本项目的价值：可借鉴“模型只选择预定义能力”，不能替代 SurfaceSpec。
+
+### Vercel Labs json-render
+
+- 布局：用受控组件树和 Catalog 定义 Stack、Grid 等布局及枚举属性。
+- 身份：元素 key 是稳定 ID，支持流式规格和 patch/merge/diff。
+- 边界：模型只能使用 Catalog schema；若开发者开放 raw style，边界也会随之扩大。
+- 对本项目的价值：适合借鉴 Catalog、扁平 ID、枚举 gap、严格校验和原子更新。
 
 ## 1. Google A2UI
 

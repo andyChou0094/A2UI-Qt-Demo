@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "surfaceId": "main",
+  "root": "layout-1",
+  "nodes": [
+    {
+      "id": "layout-1",
+      "type": "Row",
+      "children": [
+        "calculator-main",
+        "history-main"
+      ]
+    },
+    {
+      "id": "calculator-main",
+      "type": "Calculator",
+      "weight": 2
+    },
+    {
+      "id": "history-main",
+      "type": "CalculationHistory",
+      "weight": 1
+    }
+  ]
+}

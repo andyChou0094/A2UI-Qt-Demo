@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "root": {
+    "kind": "layout", "type": "Column", "children": [
+      {"kind": "layout", "type": "Row", "children": [
+        {"kind": "layout", "type": "Column", "children": [
+          {"kind": "layout", "type": "Row", "children": [
+            {"kind": "layout", "type": "Column", "children": [
+              {"kind": "layout", "type": "Row", "children": [
+                {"kind": "layout", "type": "Column", "children": [
+                  {"kind": "new", "type": "Calculator"}
+                ]}
+              ]}
+            ]}
+          ]}
+        ]}
+      ]}
+    ]
+  }
+}

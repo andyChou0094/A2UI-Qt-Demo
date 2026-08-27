@@ -1,0 +1,9 @@
+{
+  "version": "0.1",
+  "surfaceId": "main",
+  "root": "root",
+  "nodes": [
+    {"id": "root", "type": "Column", "children": ["browser-main"]},
+    {"id": "browser-main", "type": "Browser"}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "version": "0.1",
+  "surfaceId": "main",
+  "root": "root",
+  "nodes": [
+    {"id": "root", "type": "Column", "children": ["calculator-main", "history-main"], "gap": "medium"},
+    {"id": "calculator-main", "type": "Calculator"},
+    {"id": "history-main", "type": "CalculationHistory"}
+  ]
+}

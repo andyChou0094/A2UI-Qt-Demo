@@ -1,0 +1,10 @@
+{
+  "version": "0.1",
+  "surfaceId": "main",
+  "root": "root",
+  "nodes": [
+    {"id": "root", "type": "Row", "children": ["calculator-left", "calculator-right"], "gap": "large", "justify": "spaceBetween"},
+    {"id": "calculator-left", "type": "Calculator"},
+    {"id": "calculator-right", "type": "Calculator"}
+  ]
+}

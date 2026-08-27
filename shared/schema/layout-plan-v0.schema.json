@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://a2ui.local/schema/layout-plan-v0.schema.json",
+  "title": "Qt UI Composition LayoutPlan v0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "root"],
+  "properties": {
+    "version": {"const": "0.1"},
+    "root": {"$ref": "#/$defs/planNode"}
+  },
+  "$defs": {
+    "weight": {"type": "integer", "minimum": 0, "maximum": 10},
+    "businessType": {
+      "enum": ["Calculator", "CalculationHistory", "CalculationStats", "Clock", "NotePad"]
+    },
+    "layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "type", "children"],
+      "properties": {
+        "kind": {"const": "layout"},
+        "type": {"enum": ["Row", "Column"]},
+        "children": {"type": "array", "maxItems": 32, "items": {"$ref": "#/$defs/planNode"}},
+        "gap": {"enum": ["none", "small", "medium", "large"]},
+        "align": {"enum": ["start", "center", "end", "stretch"]},
+        "justify": {"enum": ["start", "center", "end", "spaceBetween", "spaceAround", "spaceEvenly"]},
+        "weight": {"$ref": "#/$defs/weight"}
+      }
+    },
+    "existing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "id", "type"],
+      "properties": {
+        "kind": {"const": "existing"},
+        "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"},
+        "type": {"$ref": "#/$defs/businessType"},
+        "weight": {"$ref": "#/$defs/weight"}
+      }
+    },
+    "new": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "type"],
+      "properties": {
+        "kind": {"const": "new"},
+        "type": {"$ref": "#/$defs/businessType"},
+        "weight": {"$ref": "#/$defs/weight"}
+      }
+    },
+    "planNode": {
+      "oneOf": [
+        {"$ref": "#/$defs/layout"},
+        {"$ref": "#/$defs/existing"},
+        {"$ref": "#/$defs/new"}
+      ]
+    }
+  }
+}

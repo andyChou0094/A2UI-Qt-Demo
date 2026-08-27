@@ -1,0 +1,15 @@
+{
+  "corpusVersion": "provider-regressions-v1",
+  "cases": [
+    {
+      "id": "PR-001",
+      "sourceSampleId": "PB-048",
+      "category": "semantic-noop",
+      "fixture": "top-bottom.json",
+      "prompt": "给页面设置蓝色背景和自定义字体",
+      "expectedErrorCode": "unsupported_layout",
+      "observedBehavior": "Provider 返回未包含样式字段的原布局等价 Column，链路将其作为合法 Surface 接受",
+      "guardrail": "不得向 SurfaceSpec 增加样式字段、放宽 Schema 或跳过 Validator"
+    }
+  ]
+}

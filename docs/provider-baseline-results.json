@@ -1,0 +1,2120 @@
+{
+  "baselineVersion": "provider-baseline-report-v1",
+  "corpusVersion": "provider-baseline-v1",
+  "runAt": "2026-08-21T08:21:09.330366+00:00",
+  "providerEndpoint": "https://api.deepseek.com/chat/completions",
+  "model": "deepseek-v4-flash",
+  "temperature": 0,
+  "timeoutSeconds": 90.0,
+  "execution": "serial",
+  "requestedSamples": 50,
+  "completedSamples": 50,
+  "status": "complete",
+  "incompleteReason": null,
+  "apiKeyRecorded": false,
+  "validSurfaceCount": 40,
+  "validSurfaceRate": 0.8,
+  "allSamplesProvider": {
+    "averageSeconds": 11.498530937819924,
+    "p50Seconds": 5.341568864499095
+  },
+  "allSamplesCompose": {
+    "averageSeconds": 11.500395454980099,
+    "p50Seconds": 5.343348106500343
+  },
+  "successfulSamplesProvider": {
+    "averageSeconds": 8.08756971042494,
+    "p50Seconds": 5.008877494500666
+  },
+  "successfulSamplesCompose": {
+    "averageSeconds": 8.089520259250094,
+    "p50Seconds": 5.010505727499549
+  },
+  "failureCounts": {
+    "transport": 1,
+    "timeout": 0,
+    "parse": 0,
+    "semantic": 9,
+    "compilation": 0,
+    "final_validation": 0
+  },
+  "samples": [
+    {
+      "id": "PB-001",
+      "category": "left-right",
+      "prompt": "把计算器放左边，历史记录放右边",
+      "currentFixture": "top-bottom.json",
+      "providerSeconds": 2.4427635419997387,
+      "composeSeconds": 2.447417454999595,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-002",
+      "category": "left-right",
+      "prompt": "将计算器与计算历史横向排列",
+      "currentFixture": "top-bottom.json",
+      "providerSeconds": 6.9007752150009765,
+      "composeSeconds": 6.902428715000497,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-003",
+      "category": "left-right",
+      "prompt": "左侧显示计算器，右侧显示历史",
+      "currentFixture": "top-bottom.json",
+      "providerSeconds": 1.738583340000332,
+      "composeSeconds": 1.7401423640003486,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ]
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-004",
+      "category": "left-right",
+      "prompt": "让统计区域在左，计算器和历史在右",
+      "currentFixture": "sidebar.json",
+      "providerSeconds": 21.774335288999282,
+      "composeSeconds": 21.776002627999333,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"large\",\"justify\":\"start\",\"children\":[{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"small\",\"weight\":1,\"children\":[{\"kind\":\"existing\",\"id\":\"stats-main\",\"type\":\"CalculationStats\"},{\"kind\":\"existing\",\"id\":\"clock-main\",\"type\":\"Clock\"}]},{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"medium\",\"weight\":3,\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": [
+              "layout-2",
+              "layout-3"
+            ],
+            "gap": "large",
+            "justify": "start"
+          },
+          {
+            "id": "layout-2",
+            "type": "Column",
+            "children": [
+              "stats-main",
+              "clock-main"
+            ],
+            "gap": "small",
+            "weight": 1
+          },
+          {
+            "id": "stats-main",
+            "type": "CalculationStats"
+          },
+          {
+            "id": "clock-main",
+            "type": "Clock"
+          },
+          {
+            "id": "layout-3",
+            "type": "Column",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ],
+            "gap": "medium",
+            "weight": 3
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-005",
+      "category": "left-right",
+      "prompt": "用一行展示计算器和历史记录",
+      "currentFixture": "top-bottom.json",
+      "providerSeconds": 2.835806004000915,
+      "composeSeconds": 2.8374460239992914,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-006",
+      "category": "top-bottom",
+      "prompt": "计算器在上，历史记录在下",
+      "currentFixture": "top-bottom.json",
+      "providerSeconds": 2.02509112000007,
+      "composeSeconds": 2.0282095150014356,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ]
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-007",
+      "category": "top-bottom",
+      "prompt": "将计算器和历史改成纵向排列",
+      "currentFixture": "top-bottom.json",
+      "providerSeconds": 4.228363058000468,
+      "composeSeconds": 4.229827914999987,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-008",
+      "category": "top-bottom",
+      "prompt": "上方放计算器，下方放历史",
+      "currentFixture": "top-bottom.json",
+      "providerSeconds": 21.049726806999388,
+      "composeSeconds": 21.051007557998673,
+      "validSurface": false,
+      "failureStage": "transport",
+      "errorCode": "llm_provider_error",
+      "diagnostics": [
+        "<urlopen error [Errno 111] Connection refused>"
+      ],
+      "rawLayoutPlan": null,
+      "surface": null
+    },
+    {
+      "id": "PB-009",
+      "category": "top-bottom",
+      "prompt": "统计与时钟在上，其余组件在下",
+      "currentFixture": "sidebar.json",
+      "providerSeconds": 5.569166074001259,
+      "composeSeconds": 5.573134824999215,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"children\":[{\"kind\":\"layout\",\"type\":\"Column\",\"children\":[{\"kind\":\"existing\",\"id\":\"stats-main\",\"type\":\"CalculationStats\"},{\"kind\":\"existing\",\"id\":\"clock-main\",\"type\":\"Clock\"}]},{\"kind\":\"layout\",\"type\":\"Column\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "layout-2",
+              "layout-3"
+            ]
+          },
+          {
+            "id": "layout-2",
+            "type": "Column",
+            "children": [
+              "stats-main",
+              "clock-main"
+            ]
+          },
+          {
+            "id": "stats-main",
+            "type": "CalculationStats"
+          },
+          {
+            "id": "clock-main",
+            "type": "Clock"
+          },
+          {
+            "id": "layout-3",
+            "type": "Column",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ]
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-010",
+      "category": "top-bottom",
+      "prompt": "用一列依次展示计算器和历史",
+      "currentFixture": "top-bottom.json",
+      "providerSeconds": 3.5512760919991706,
+      "composeSeconds": 3.5530471869988105,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ]
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-011",
+      "category": "sidebar",
+      "prompt": "统计和时钟做左侧栏，其余放右侧",
+      "currentFixture": "sidebar.json",
+      "providerSeconds": 8.44173727099951,
+      "composeSeconds": 8.443487717999233,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"large\",\"justify\":\"start\",\"children\":[{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"small\",\"weight\":1,\"children\":[{\"kind\":\"existing\",\"id\":\"stats-main\",\"type\":\"CalculationStats\"},{\"kind\":\"existing\",\"id\":\"clock-main\",\"type\":\"Clock\"}]},{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"medium\",\"weight\":3,\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": [
+              "layout-2",
+              "layout-3"
+            ],
+            "gap": "large",
+            "justify": "start"
+          },
+          {
+            "id": "layout-2",
+            "type": "Column",
+            "children": [
+              "stats-main",
+              "clock-main"
+            ],
+            "gap": "small",
+            "weight": 1
+          },
+          {
+            "id": "stats-main",
+            "type": "CalculationStats"
+          },
+          {
+            "id": "clock-main",
+            "type": "Clock"
+          },
+          {
+            "id": "layout-3",
+            "type": "Column",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ],
+            "gap": "medium",
+            "weight": 3
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-012",
+      "category": "sidebar",
+      "prompt": "左侧窄栏放时钟与摘要，主区放计算器和历史",
+      "currentFixture": "sidebar.json",
+      "providerSeconds": 25.91114885799834,
+      "composeSeconds": 25.91263434099892,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"large\",\"justify\":\"start\",\"children\":[{\"kind\":\"layout\",\"type\":\"Column\",\"weight\":1,\"gap\":\"small\",\"children\":[{\"kind\":\"existing\",\"id\":\"clock-main\",\"type\":\"Clock\"},{\"kind\":\"existing\",\"id\":\"stats-main\",\"type\":\"CalculationStats\"}]},{\"kind\":\"layout\",\"type\":\"Column\",\"weight\":3,\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": [
+              "layout-2",
+              "layout-3"
+            ],
+            "gap": "large",
+            "justify": "start"
+          },
+          {
+            "id": "layout-2",
+            "type": "Column",
+            "children": [
+              "clock-main",
+              "stats-main"
+            ],
+            "gap": "small",
+            "weight": 1
+          },
+          {
+            "id": "clock-main",
+            "type": "Clock"
+          },
+          {
+            "id": "stats-main",
+            "type": "CalculationStats"
+          },
+          {
+            "id": "layout-3",
+            "type": "Column",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ],
+            "gap": "medium",
+            "weight": 3
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-013",
+      "category": "sidebar",
+      "prompt": "创建左侧信息栏和右侧工作区",
+      "currentFixture": "sidebar.json",
+      "providerSeconds": 11.233402822999778,
+      "composeSeconds": 11.236045565001405,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"large\",\"justify\":\"start\",\"children\":[{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"small\",\"weight\":1,\"children\":[{\"kind\":\"existing\",\"id\":\"stats-main\",\"type\":\"CalculationStats\"},{\"kind\":\"existing\",\"id\":\"clock-main\",\"type\":\"Clock\"}]},{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"medium\",\"weight\":3,\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": [
+              "layout-2",
+              "layout-3"
+            ],
+            "gap": "large",
+            "justify": "start"
+          },
+          {
+            "id": "layout-2",
+            "type": "Column",
+            "children": [
+              "stats-main",
+              "clock-main"
+            ],
+            "gap": "small",
+            "weight": 1
+          },
+          {
+            "id": "stats-main",
+            "type": "CalculationStats"
+          },
+          {
+            "id": "clock-main",
+            "type": "Clock"
+          },
+          {
+            "id": "layout-3",
+            "type": "Column",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ],
+            "gap": "medium",
+            "weight": 3
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-014",
+      "category": "sidebar",
+      "prompt": "把时钟放在左栏，计算器与历史放右栏",
+      "currentFixture": "sidebar.json",
+      "providerSeconds": 9.103308191999531,
+      "composeSeconds": 9.104886139000882,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"large\",\"justify\":\"start\",\"children\":[{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"small\",\"weight\":1,\"children\":[{\"kind\":\"existing\",\"id\":\"stats-main\",\"type\":\"CalculationStats\"},{\"kind\":\"existing\",\"id\":\"clock-main\",\"type\":\"Clock\"}]},{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"medium\",\"weight\":3,\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": [
+              "layout-2",
+              "layout-3"
+            ],
+            "gap": "large",
+            "justify": "start"
+          },
+          {
+            "id": "layout-2",
+            "type": "Column",
+            "children": [
+              "stats-main",
+              "clock-main"
+            ],
+            "gap": "small",
+            "weight": 1
+          },
+          {
+            "id": "stats-main",
+            "type": "CalculationStats"
+          },
+          {
+            "id": "clock-main",
+            "type": "Clock"
+          },
+          {
+            "id": "layout-3",
+            "type": "Column",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ],
+            "gap": "medium",
+            "weight": 3
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-015",
+      "category": "sidebar",
+      "prompt": "形成侧栏加主内容的 Row/Column 布局",
+      "currentFixture": "sidebar.json",
+      "providerSeconds": 6.600247488000605,
+      "composeSeconds": 6.602132631000131,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"large\",\"justify\":\"start\",\"children\":[{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"small\",\"weight\":1,\"children\":[{\"kind\":\"existing\",\"id\":\"stats-main\",\"type\":\"CalculationStats\"},{\"kind\":\"existing\",\"id\":\"clock-main\",\"type\":\"Clock\"}]},{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"medium\",\"weight\":3,\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": [
+              "layout-2",
+              "layout-3"
+            ],
+            "gap": "large",
+            "justify": "start"
+          },
+          {
+            "id": "layout-2",
+            "type": "Column",
+            "children": [
+              "stats-main",
+              "clock-main"
+            ],
+            "gap": "small",
+            "weight": 1
+          },
+          {
+            "id": "stats-main",
+            "type": "CalculationStats"
+          },
+          {
+            "id": "clock-main",
+            "type": "Clock"
+          },
+          {
+            "id": "layout-3",
+            "type": "Column",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ],
+            "gap": "medium",
+            "weight": 3
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-016",
+      "category": "nested",
+      "prompt": "只用 Row 和 Column 做成上下两行、每行两个区域",
+      "currentFixture": "nested-2x2.json",
+      "providerSeconds": 5.467575494998528,
+      "composeSeconds": 5.469192180000391,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"medium\",\"children\":[{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"stats-main\",\"type\":\"CalculationStats\"}]},{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"},{\"kind\":\"existing\",\"id\":\"notes-main\",\"type\":\"NotePad\"}]}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "layout-2",
+              "layout-3"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "layout-2",
+            "type": "Row",
+            "children": [
+              "calculator-main",
+              "stats-main"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "stats-main",
+            "type": "CalculationStats"
+          },
+          {
+            "id": "layout-3",
+            "type": "Row",
+            "children": [
+              "history-main",
+              "notes-main"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          },
+          {
+            "id": "notes-main",
+            "type": "NotePad"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-017",
+      "category": "nested",
+      "prompt": "把四个组件排成两行两列的嵌套结构",
+      "currentFixture": "nested-2x2.json",
+      "providerSeconds": 5.0666947120007535,
+      "composeSeconds": 5.068180715999915,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"medium\",\"children\":[{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"stats-main\",\"type\":\"CalculationStats\"}]},{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"},{\"kind\":\"existing\",\"id\":\"notes-main\",\"type\":\"NotePad\"}]}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "layout-2",
+              "layout-3"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "layout-2",
+            "type": "Row",
+            "children": [
+              "calculator-main",
+              "stats-main"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "stats-main",
+            "type": "CalculationStats"
+          },
+          {
+            "id": "layout-3",
+            "type": "Row",
+            "children": [
+              "history-main",
+              "notes-main"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          },
+          {
+            "id": "notes-main",
+            "type": "NotePad"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-018",
+      "category": "nested",
+      "prompt": "右侧再分成上下两个区域",
+      "currentFixture": "sidebar.json",
+      "providerSeconds": 41.18861021599878,
+      "composeSeconds": 41.19061065200003,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"large\",\"justify\":\"start\",\"children\":[{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"small\",\"weight\":1,\"children\":[{\"kind\":\"existing\",\"id\":\"stats-main\",\"type\":\"CalculationStats\"},{\"kind\":\"existing\",\"id\":\"clock-main\",\"type\":\"Clock\"}]},{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"medium\",\"weight\":3,\"children\":[{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"medium\",\"weight\":1,\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"}]},{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"medium\",\"weight\":1,\"children\":[{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}]}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": [
+              "layout-2",
+              "layout-3"
+            ],
+            "gap": "large",
+            "justify": "start"
+          },
+          {
+            "id": "layout-2",
+            "type": "Column",
+            "children": [
+              "stats-main",
+              "clock-main"
+            ],
+            "gap": "small",
+            "weight": 1
+          },
+          {
+            "id": "stats-main",
+            "type": "CalculationStats"
+          },
+          {
+            "id": "clock-main",
+            "type": "Clock"
+          },
+          {
+            "id": "layout-3",
+            "type": "Column",
+            "children": [
+              "layout-4",
+              "layout-5"
+            ],
+            "gap": "medium",
+            "weight": 3
+          },
+          {
+            "id": "layout-4",
+            "type": "Column",
+            "children": [
+              "calculator-main"
+            ],
+            "gap": "medium",
+            "weight": 1
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "layout-5",
+            "type": "Column",
+            "children": [
+              "history-main"
+            ],
+            "gap": "medium",
+            "weight": 1
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-019",
+      "category": "nested",
+      "prompt": "使用 Column 包含两个 Row 展示组件",
+      "currentFixture": "nested-2x2.json",
+      "providerSeconds": 3.7031514680002147,
+      "composeSeconds": 3.7050473099989176,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"medium\",\"children\":[{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"stats-main\",\"type\":\"CalculationStats\"}]},{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"},{\"kind\":\"existing\",\"id\":\"notes-main\",\"type\":\"NotePad\"}]}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "layout-2",
+              "layout-3"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "layout-2",
+            "type": "Row",
+            "children": [
+              "calculator-main",
+              "stats-main"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "stats-main",
+            "type": "CalculationStats"
+          },
+          {
+            "id": "layout-3",
+            "type": "Row",
+            "children": [
+              "history-main",
+              "notes-main"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          },
+          {
+            "id": "notes-main",
+            "type": "NotePad"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-020",
+      "category": "nested",
+      "prompt": "做一个只含 Row/Column 的嵌套工作区",
+      "currentFixture": "nested-2x2.json",
+      "providerSeconds": 4.951060277000579,
+      "composeSeconds": 4.952830738999182,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"medium\",\"children\":[{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"stats-main\",\"type\":\"CalculationStats\"}]},{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"},{\"kind\":\"existing\",\"id\":\"notes-main\",\"type\":\"NotePad\"}]}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "layout-2",
+              "layout-3"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "layout-2",
+            "type": "Row",
+            "children": [
+              "calculator-main",
+              "stats-main"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "stats-main",
+            "type": "CalculationStats"
+          },
+          {
+            "id": "layout-3",
+            "type": "Row",
+            "children": [
+              "history-main",
+              "notes-main"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          },
+          {
+            "id": "notes-main",
+            "type": "NotePad"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-021",
+      "category": "weight",
+      "prompt": "计算器宽度约为历史记录两倍",
+      "currentFixture": "weighted-highlight.json",
+      "providerSeconds": 2.6141321810009686,
+      "composeSeconds": 2.616357433000303,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"justify\":\"start\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\",\"weight\":2},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\",\"weight\":1}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ],
+            "justify": "start"
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator",
+            "weight": 2
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory",
+            "weight": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-022",
+      "category": "weight",
+      "prompt": "突出计算器，给它两份空间，历史一份",
+      "currentFixture": "weighted-highlight.json",
+      "providerSeconds": 4.7779880950001825,
+      "composeSeconds": 4.779584583999167,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"justify\":\"start\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\",\"weight\":2},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\",\"weight\":1}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ],
+            "justify": "start"
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator",
+            "weight": 2
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory",
+            "weight": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-023",
+      "category": "weight",
+      "prompt": "主内容占三份宽度，侧栏占一份",
+      "currentFixture": "sidebar.json",
+      "providerSeconds": 4.837331882999933,
+      "composeSeconds": 4.839126872000634,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"large\",\"justify\":\"start\",\"children\":[{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"small\",\"weight\":1,\"children\":[{\"kind\":\"existing\",\"id\":\"stats-main\",\"type\":\"CalculationStats\"},{\"kind\":\"existing\",\"id\":\"clock-main\",\"type\":\"Clock\"}]},{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"medium\",\"weight\":3,\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": [
+              "layout-2",
+              "layout-3"
+            ],
+            "gap": "large",
+            "justify": "start"
+          },
+          {
+            "id": "layout-2",
+            "type": "Column",
+            "children": [
+              "stats-main",
+              "clock-main"
+            ],
+            "gap": "small",
+            "weight": 1
+          },
+          {
+            "id": "stats-main",
+            "type": "CalculationStats"
+          },
+          {
+            "id": "clock-main",
+            "type": "Clock"
+          },
+          {
+            "id": "layout-3",
+            "type": "Column",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ],
+            "gap": "medium",
+            "weight": 3
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-024",
+      "category": "weight",
+      "prompt": "让左侧组件比右侧组件更宽",
+      "currentFixture": "weighted-highlight.json",
+      "providerSeconds": 6.205309233999287,
+      "composeSeconds": 6.207012038001267,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\",\"weight\":2},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\",\"weight\":1}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ]
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator",
+            "weight": 2
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory",
+            "weight": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-025",
+      "category": "weight",
+      "prompt": "按 2 比 1 分配计算器和历史的横向空间",
+      "currentFixture": "weighted-highlight.json",
+      "providerSeconds": 4.890674397000112,
+      "composeSeconds": 4.892216718999407,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\",\"weight\":2},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\",\"weight\":1}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ]
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator",
+            "weight": 2
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory",
+            "weight": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-026",
+      "category": "duplicate",
+      "prompt": "再添加一个独立计算器",
+      "currentFixture": "top-bottom.json",
+      "providerSeconds": 3.989003610000509,
+      "composeSeconds": 3.9907088239997393,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"},{\"kind\":\"new\",\"type\":\"Calculator\"}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "calculator-main",
+              "history-main",
+              "calculator-1"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          },
+          {
+            "id": "calculator-1",
+            "type": "Calculator"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-027",
+      "category": "duplicate",
+      "prompt": "保留当前计算器并新增第二个计算器",
+      "currentFixture": "top-bottom.json",
+      "providerSeconds": 12.874078364000525,
+      "composeSeconds": 12.875639077001324,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"new\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "calculator-main",
+              "calculator-1",
+              "history-main"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "calculator-1",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-028",
+      "category": "duplicate",
+      "prompt": "添加两个互相独立的计算器",
+      "currentFixture": "empty-surface.json",
+      "providerSeconds": 5.090985422000813,
+      "composeSeconds": 5.093617137001274,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"children\":[{\"kind\":\"new\",\"type\":\"Calculator\"},{\"kind\":\"new\",\"type\":\"Calculator\"}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "calculator-1",
+              "calculator-2"
+            ]
+          },
+          {
+            "id": "calculator-1",
+            "type": "Calculator"
+          },
+          {
+            "id": "calculator-2",
+            "type": "Calculator"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-029",
+      "category": "duplicate",
+      "prompt": "把两个计算器改成左右排列",
+      "currentFixture": "duplicate-calculators.json",
+      "providerSeconds": 5.841927815999952,
+      "composeSeconds": 5.843741987000612,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"large\",\"justify\":\"spaceBetween\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-left\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"calculator-right\",\"type\":\"Calculator\"}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": [
+              "calculator-left",
+              "calculator-right"
+            ],
+            "gap": "large",
+            "justify": "spaceBetween"
+          },
+          {
+            "id": "calculator-left",
+            "type": "Calculator"
+          },
+          {
+            "id": "calculator-right",
+            "type": "Calculator"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-030",
+      "category": "duplicate",
+      "prompt": "保留两个计算器并把它们纵向排列",
+      "currentFixture": "duplicate-calculators.json",
+      "providerSeconds": 2.2905055729988817,
+      "composeSeconds": 2.2922152949995507,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-left\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"calculator-right\",\"type\":\"Calculator\"}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "calculator-left",
+              "calculator-right"
+            ]
+          },
+          {
+            "id": "calculator-left",
+            "type": "Calculator"
+          },
+          {
+            "id": "calculator-right",
+            "type": "Calculator"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-031",
+      "category": "empty",
+      "prompt": "创建一个空的 Column Surface",
+      "currentFixture": "empty-surface.json",
+      "providerSeconds": 2.2315648090007016,
+      "composeSeconds": 2.2331724479990953,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"children\":[]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-032",
+      "category": "empty",
+      "prompt": "保持页面为空但使用合法 Row",
+      "currentFixture": "empty-surface.json",
+      "providerSeconds": 3.172934731999703,
+      "composeSeconds": 3.174548296001376,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"children\":[]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-033",
+      "category": "empty",
+      "prompt": "添加一个计算器",
+      "currentFixture": "empty-surface.json",
+      "providerSeconds": 6.472615161999784,
+      "composeSeconds": 6.474811138999939,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"children\":[{\"kind\":\"new\",\"type\":\"Calculator\"}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "calculator-1"
+            ]
+          },
+          {
+            "id": "calculator-1",
+            "type": "Calculator"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-034",
+      "category": "empty",
+      "prompt": "添加时钟和本地笔记并上下排列",
+      "currentFixture": "empty-surface.json",
+      "providerSeconds": 3.8743110169998545,
+      "composeSeconds": 3.8759761399996933,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"children\":[{\"kind\":\"new\",\"type\":\"Clock\"},{\"kind\":\"new\",\"type\":\"NotePad\"}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "clock-1",
+              "note-pad-1"
+            ]
+          },
+          {
+            "id": "clock-1",
+            "type": "Clock"
+          },
+          {
+            "id": "note-pad-1",
+            "type": "NotePad"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-035",
+      "category": "empty",
+      "prompt": "创建包含统计摘要的最小页面",
+      "currentFixture": "empty-surface.json",
+      "providerSeconds": 1.783581444000447,
+      "composeSeconds": 1.785084913000901,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"children\":[{\"kind\":\"new\",\"type\":\"CalculationStats\"}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "calculation-stats-1"
+            ]
+          },
+          {
+            "id": "calculation-stats-1",
+            "type": "CalculationStats"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-036",
+      "category": "mixed",
+      "prompt": "在计算器下方加入本地笔记",
+      "currentFixture": "top-bottom.json",
+      "providerSeconds": 5.215562233999663,
+      "composeSeconds": 5.217504033000296,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"new\",\"type\":\"NotePad\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "calculator-main",
+              "note-pad-1",
+              "history-main"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "note-pad-1",
+            "type": "NotePad"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-037",
+      "category": "mixed",
+      "prompt": "把历史、统计和时钟依次纵向排列",
+      "currentFixture": "sidebar.json",
+      "providerSeconds": 27.211873861999266,
+      "composeSeconds": 27.213567701999636,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"large\",\"justify\":\"start\",\"children\":[{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"small\",\"weight\":1,\"children\":[{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"},{\"kind\":\"existing\",\"id\":\"stats-main\",\"type\":\"CalculationStats\"},{\"kind\":\"existing\",\"id\":\"clock-main\",\"type\":\"Clock\"}]},{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"medium\",\"weight\":3,\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"}]}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": [
+              "layout-2",
+              "layout-3"
+            ],
+            "gap": "large",
+            "justify": "start"
+          },
+          {
+            "id": "layout-2",
+            "type": "Column",
+            "children": [
+              "history-main",
+              "stats-main",
+              "clock-main"
+            ],
+            "gap": "small",
+            "weight": 1
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          },
+          {
+            "id": "stats-main",
+            "type": "CalculationStats"
+          },
+          {
+            "id": "clock-main",
+            "type": "Clock"
+          },
+          {
+            "id": "layout-3",
+            "type": "Column",
+            "children": [
+              "calculator-main"
+            ],
+            "gap": "medium",
+            "weight": 3
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-038",
+      "category": "mixed",
+      "prompt": "把笔记移到最上方，其余保持可访问",
+      "currentFixture": "nested-2x2.json",
+      "providerSeconds": 10.99394660299913,
+      "composeSeconds": 10.99586207700122,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\n  \"version\": \"0.1\",\n  \"root\": {\n    \"kind\": \"layout\",\n    \"type\": \"Column\",\n    \"gap\": \"medium\",\n    \"children\": [\n      {\n        \"kind\": \"existing\",\n        \"id\": \"notes-main\",\n        \"type\": \"NotePad\"\n      },\n      {\n        \"kind\": \"layout\",\n        \"type\": \"Row\",\n        \"gap\": \"medium\",\n        \"children\": [\n          {\n            \"kind\": \"existing\",\n            \"id\": \"calculator-main\",\n            \"type\": \"Calculator\"\n          },\n          {\n            \"kind\": \"existing\",\n            \"id\": \"stats-main\",\n            \"type\": \"CalculationStats\"\n          }\n        ]\n      },\n      {\n        \"kind\": \"existing\",\n        \"id\": \"history-main\",\n        \"type\": \"CalculationHistory\"\n      }\n    ]\n  }\n}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "notes-main",
+              "layout-2",
+              "history-main"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "notes-main",
+            "type": "NotePad"
+          },
+          {
+            "id": "layout-2",
+            "type": "Row",
+            "children": [
+              "calculator-main",
+              "stats-main"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "stats-main",
+            "type": "CalculationStats"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-039",
+      "category": "mixed",
+      "prompt": "计算器单独一行，历史与统计放下一行",
+      "currentFixture": "sidebar.json",
+      "providerSeconds": 31.03553530499994,
+      "composeSeconds": 31.03712925199943,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"large\",\"children\":[{\"kind\":\"layout\",\"type\":\"Row\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"}]},{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"},{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"small\",\"children\":[{\"kind\":\"existing\",\"id\":\"stats-main\",\"type\":\"CalculationStats\"},{\"kind\":\"existing\",\"id\":\"clock-main\",\"type\":\"Clock\"}]}]}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "layout-2",
+              "layout-3"
+            ],
+            "gap": "large"
+          },
+          {
+            "id": "layout-2",
+            "type": "Row",
+            "children": [
+              "calculator-main"
+            ]
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "layout-3",
+            "type": "Row",
+            "children": [
+              "history-main",
+              "layout-4"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          },
+          {
+            "id": "layout-4",
+            "type": "Column",
+            "children": [
+              "stats-main",
+              "clock-main"
+            ],
+            "gap": "small"
+          },
+          {
+            "id": "stats-main",
+            "type": "CalculationStats"
+          },
+          {
+            "id": "clock-main",
+            "type": "Clock"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-040",
+      "category": "mixed",
+      "prompt": "将所有现有组件放入一个 Column",
+      "currentFixture": "top-bottom.json",
+      "providerSeconds": 2.922059721999176,
+      "composeSeconds": 2.9235615390007297,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-041",
+      "category": "unsupported",
+      "prompt": "使用 Grid 排成三列",
+      "currentFixture": "top-bottom.json",
+      "providerSeconds": 29.35500138200041,
+      "composeSeconds": 29.356417295000938,
+      "validSurface": false,
+      "failureStage": "semantic",
+      "errorCode": "unsupported_layout",
+      "diagnostics": [
+        "SurfaceSpec v0 cannot express layout type Grid"
+      ],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Grid\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"},{\"kind\":\"new\",\"type\":\"CalculationStats\"}]}}",
+      "surface": null
+    },
+    {
+      "id": "PB-042",
+      "category": "unsupported",
+      "prompt": "让历史记录跨两列",
+      "currentFixture": "top-bottom.json",
+      "providerSeconds": 43.821694684998874,
+      "composeSeconds": 43.82320323800013,
+      "validSurface": false,
+      "failureStage": "semantic",
+      "errorCode": "unsupported_layout",
+      "diagnostics": [
+        "SurfaceSpec v0 cannot express layout type Grid"
+      ],
+      "rawLayoutPlan": "{\n  \"version\": \"0.1\",\n  \"root\": {\n    \"kind\": \"layout\",\n    \"type\": \"Grid\",\n    \"children\": [\n      {\n        \"kind\": \"existing\",\n        \"id\": \"calculator-main\",\n        \"type\": \"Calculator\"\n      },\n      {\n        \"kind\": \"existing\",\n        \"id\": \"history-main\",\n        \"type\": \"CalculationHistory\"\n      }\n    ]\n  }\n}",
+      "surface": null
+    },
+    {
+      "id": "PB-043",
+      "category": "unsupported",
+      "prompt": "按窗口宽度自动响应式换行",
+      "currentFixture": "sidebar.json",
+      "providerSeconds": 34.10627201800162,
+      "composeSeconds": 34.10787379000067,
+      "validSurface": false,
+      "failureStage": "semantic",
+      "errorCode": "unsupported_layout",
+      "diagnostics": [
+        "SurfaceSpec v0 cannot express layout type Wrap"
+      ],
+      "rawLayoutPlan": "{\n  \"version\": \"0.1\",\n  \"root\": {\n    \"kind\": \"layout\",\n    \"type\": \"Wrap\",\n    \"gap\": \"large\",\n    \"justify\": \"start\",\n    \"children\": [\n      {\n        \"kind\": \"layout\",\n        \"type\": \"Column\",\n        \"gap\": \"small\",\n        \"weight\": 1,\n        \"children\": [\n          {\n            \"kind\": \"existing\",\n            \"id\": \"stats-main\",\n            \"type\": \"CalculationStats\"\n          },\n          {\n            \"kind\": \"existing\",\n            \"id\": \"clock-main\",\n            \"type\": \"Clock\"\n          }\n        ]\n      },\n      {\n        \"kind\": \"layout\",\n        \"type\": \"Column\",\n        \"gap\": \"medium\",\n        \"weight\": 3,\n        \"children\": [\n          {\n            \"kind\": \"existing\",\n            \"id\": \"calculator-main\",\n            \"type\": \"Calculator\"\n          },\n          {\n            \"kind\": \"existing\",\n            \"id\": \"history-main\",\n            \"type\": \"CalculationHistory\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+      "surface": null
+    },
+    {
+      "id": "PB-044",
+      "category": "unsupported",
+      "prompt": "把计算器浮在历史记录上方形成 Overlay",
+      "currentFixture": "top-bottom.json",
+      "providerSeconds": 2.803685961998781,
+      "composeSeconds": 2.805262952000703,
+      "validSurface": false,
+      "failureStage": "semantic",
+      "errorCode": "unsupported_layout",
+      "diagnostics": [
+        "SurfaceSpec v0 cannot express layout type Overlay"
+      ],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Overlay\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}}",
+      "surface": null
+    },
+    {
+      "id": "PB-045",
+      "category": "unsupported",
+      "prompt": "用可拖动 Dock 停靠统计面板",
+      "currentFixture": "sidebar.json",
+      "providerSeconds": 8.43379599400032,
+      "composeSeconds": 8.435191042999577,
+      "validSurface": false,
+      "failureStage": "semantic",
+      "errorCode": "unsupported_layout",
+      "diagnostics": [
+        "SurfaceSpec v0 cannot express layout type Dock"
+      ],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Dock\",\"children\":[{\"kind\":\"existing\",\"id\":\"stats-main\",\"type\":\"CalculationStats\"},{\"kind\":\"layout\",\"type\":\"Row\",\"children\":[{\"kind\":\"layout\",\"type\":\"Column\",\"children\":[{\"kind\":\"existing\",\"id\":\"clock-main\",\"type\":\"Clock\"}],\"weight\":1},{\"kind\":\"layout\",\"type\":\"Column\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}],\"weight\":3}]}]}}",
+      "surface": null
+    },
+    {
+      "id": "PB-046",
+      "category": "unsupported",
+      "prompt": "用 Splitter 节点让模型控制分隔条",
+      "currentFixture": "nested-2x2.json",
+      "providerSeconds": 26.582156571999803,
+      "composeSeconds": 26.58381870300036,
+      "validSurface": false,
+      "failureStage": "semantic",
+      "errorCode": "unsupported_layout",
+      "diagnostics": [
+        "SurfaceSpec v0 cannot express layout type Splitter"
+      ],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Splitter\",\"children\":[{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"stats-main\",\"type\":\"CalculationStats\"}]},{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"},{\"kind\":\"existing\",\"id\":\"notes-main\",\"type\":\"NotePad\"}]}]}}",
+      "surface": null
+    },
+    {
+      "id": "PB-047",
+      "category": "unsupported",
+      "prompt": "让组件自动 Wrap 到下一行",
+      "currentFixture": "top-bottom.json",
+      "providerSeconds": 11.754854314000113,
+      "composeSeconds": 11.756453296999098,
+      "validSurface": false,
+      "failureStage": "semantic",
+      "errorCode": "unsupported_layout",
+      "diagnostics": [
+        "SurfaceSpec v0 cannot express layout type Wrap"
+      ],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Wrap\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}}",
+      "surface": null
+    },
+    {
+      "id": "PB-048",
+      "category": "unsupported",
+      "prompt": "给页面设置蓝色背景和自定义字体",
+      "currentFixture": "top-bottom.json",
+      "providerSeconds": 2.4437704179999855,
+      "composeSeconds": 2.446668246000627,
+      "validSurface": true,
+      "failureStage": null,
+      "errorCode": null,
+      "diagnostics": [],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}}",
+      "surface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      }
+    },
+    {
+      "id": "PB-049",
+      "category": "unsupported",
+      "prompt": "添加一个点击后执行脚本的按钮",
+      "currentFixture": "sidebar.json",
+      "providerSeconds": 68.4810777849998,
+      "composeSeconds": 68.48272523500054,
+      "validSurface": false,
+      "failureStage": "semantic",
+      "errorCode": "invalid_layout_plan",
+      "diagnostics": [
+        "unknown business component type: Button"
+      ],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"large\",\"justify\":\"start\",\"children\":[{\"kind\":\"layout\",\"type\":\"Column\",\"weight\":1,\"gap\":\"small\",\"justify\":\"start\",\"children\":[{\"kind\":\"existing\",\"id\":\"stats-main\",\"type\":\"CalculationStats\"},{\"kind\":\"existing\",\"id\":\"clock-main\",\"type\":\"Clock\"}]},{\"kind\":\"layout\",\"type\":\"Column\",\"weight\":3,\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]},{\"kind\":\"new\",\"type\":\"Button\"}]}}",
+      "surface": null
+    },
+    {
+      "id": "PB-050",
+      "category": "unsupported",
+      "prompt": "使用 Grid、跨列和响应式断点组织页面",
+      "currentFixture": "top-bottom.json",
+      "providerSeconds": 5.035492954999427,
+      "composeSeconds": 5.0370092680004745,
+      "validSurface": false,
+      "failureStage": "semantic",
+      "errorCode": "unsupported_layout",
+      "diagnostics": [
+        "SurfaceSpec v0 cannot express layout type Grid"
+      ],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Grid\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}}",
+      "surface": null
+    }
+  ]
+}

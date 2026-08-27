@@ -1,0 +1,593 @@
+{
+  "runAt": "2026-08-21T08:10:08.032712+00:00",
+  "providerEndpoint": "https://api.deepseek.com/chat/completions",
+  "model": "deepseek-v4-flash",
+  "apiKeyRecorded": false,
+  "passed": true,
+  "scenarios": [
+    {
+      "name": "左右",
+      "prompt": "把计算器放左边，历史记录放右边",
+      "currentFixture": "top-bottom.json",
+      "expected": "Row(Calculator,CalculationHistory)",
+      "passed": true,
+      "checks": [
+        true,
+        true,
+        true
+      ],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}}",
+      "layoutPlan": {
+        "version": "0.1",
+        "root": {
+          "kind": "layout",
+          "type": "Row",
+          "gap": "medium",
+          "children": [
+            {
+              "kind": "existing",
+              "id": "calculator-main",
+              "type": "Calculator"
+            },
+            {
+              "kind": "existing",
+              "id": "history-main",
+              "type": "CalculationHistory"
+            }
+          ]
+        }
+      },
+      "compiledSurface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      },
+      "actualStructure": "Row(Calculator,CalculationHistory)",
+      "stableBusinessIdsBefore": {
+        "calculator-main": "Calculator",
+        "history-main": "CalculationHistory"
+      },
+      "stableBusinessIdsAfter": {
+        "calculator-main": "Calculator",
+        "history-main": "CalculationHistory"
+      },
+      "newBusinessIds": {},
+      "errorCode": null,
+      "diagnostics": []
+    },
+    {
+      "name": "上下",
+      "prompt": "计算器在上，历史记录在下",
+      "currentFixture": "top-bottom.json",
+      "expected": "Column(Calculator,CalculationHistory)",
+      "passed": true,
+      "checks": [
+        true,
+        true,
+        true
+      ],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}}",
+      "layoutPlan": {
+        "version": "0.1",
+        "root": {
+          "kind": "layout",
+          "type": "Column",
+          "children": [
+            {
+              "kind": "existing",
+              "id": "calculator-main",
+              "type": "Calculator"
+            },
+            {
+              "kind": "existing",
+              "id": "history-main",
+              "type": "CalculationHistory"
+            }
+          ]
+        }
+      },
+      "compiledSurface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ]
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      },
+      "actualStructure": "Column(Calculator,CalculationHistory)",
+      "stableBusinessIdsBefore": {
+        "calculator-main": "Calculator",
+        "history-main": "CalculationHistory"
+      },
+      "stableBusinessIdsAfter": {
+        "calculator-main": "Calculator",
+        "history-main": "CalculationHistory"
+      },
+      "newBusinessIds": {},
+      "errorCode": null,
+      "diagnostics": []
+    },
+    {
+      "name": "侧栏",
+      "prompt": "统计和时钟做左侧栏，其余放右侧",
+      "currentFixture": "sidebar.json",
+      "expected": "Row(Column(CalculationStats,Clock),Column(Calculator,CalculationHistory))",
+      "passed": true,
+      "checks": [
+        true,
+        true,
+        true
+      ],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"children\":[{\"kind\":\"layout\",\"type\":\"Column\",\"weight\":1,\"children\":[{\"kind\":\"existing\",\"id\":\"stats-main\",\"type\":\"CalculationStats\"},{\"kind\":\"existing\",\"id\":\"clock-main\",\"type\":\"Clock\"}]},{\"kind\":\"layout\",\"type\":\"Column\",\"weight\":3,\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}]}]}}",
+      "layoutPlan": {
+        "version": "0.1",
+        "root": {
+          "kind": "layout",
+          "type": "Row",
+          "children": [
+            {
+              "kind": "layout",
+              "type": "Column",
+              "weight": 1,
+              "children": [
+                {
+                  "kind": "existing",
+                  "id": "stats-main",
+                  "type": "CalculationStats"
+                },
+                {
+                  "kind": "existing",
+                  "id": "clock-main",
+                  "type": "Clock"
+                }
+              ]
+            },
+            {
+              "kind": "layout",
+              "type": "Column",
+              "weight": 3,
+              "children": [
+                {
+                  "kind": "existing",
+                  "id": "calculator-main",
+                  "type": "Calculator"
+                },
+                {
+                  "kind": "existing",
+                  "id": "history-main",
+                  "type": "CalculationHistory"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "compiledSurface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": [
+              "layout-2",
+              "layout-3"
+            ]
+          },
+          {
+            "id": "layout-2",
+            "type": "Column",
+            "children": [
+              "stats-main",
+              "clock-main"
+            ],
+            "weight": 1
+          },
+          {
+            "id": "stats-main",
+            "type": "CalculationStats"
+          },
+          {
+            "id": "clock-main",
+            "type": "Clock"
+          },
+          {
+            "id": "layout-3",
+            "type": "Column",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ],
+            "weight": 3
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          }
+        ]
+      },
+      "actualStructure": "Row(Column(CalculationStats,Clock),Column(Calculator,CalculationHistory))",
+      "stableBusinessIdsBefore": {
+        "stats-main": "CalculationStats",
+        "clock-main": "Clock",
+        "calculator-main": "Calculator",
+        "history-main": "CalculationHistory"
+      },
+      "stableBusinessIdsAfter": {
+        "stats-main": "CalculationStats",
+        "clock-main": "Clock",
+        "calculator-main": "Calculator",
+        "history-main": "CalculationHistory"
+      },
+      "newBusinessIds": {},
+      "errorCode": null,
+      "diagnostics": []
+    },
+    {
+      "name": "2x2",
+      "prompt": "只用 Row 和 Column 做成上下两行、每行两个区域的 2×2 面板",
+      "currentFixture": "nested-2x2.json",
+      "expected": "Column(Row(Calculator,CalculationStats),Row(CalculationHistory,NotePad))",
+      "passed": true,
+      "checks": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Column\",\"gap\":\"medium\",\"children\":[{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"stats-main\",\"type\":\"CalculationStats\"}]},{\"kind\":\"layout\",\"type\":\"Row\",\"gap\":\"medium\",\"children\":[{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"},{\"kind\":\"existing\",\"id\":\"notes-main\",\"type\":\"NotePad\"}]}]}}",
+      "layoutPlan": {
+        "version": "0.1",
+        "root": {
+          "kind": "layout",
+          "type": "Column",
+          "gap": "medium",
+          "children": [
+            {
+              "kind": "layout",
+              "type": "Row",
+              "gap": "medium",
+              "children": [
+                {
+                  "kind": "existing",
+                  "id": "calculator-main",
+                  "type": "Calculator"
+                },
+                {
+                  "kind": "existing",
+                  "id": "stats-main",
+                  "type": "CalculationStats"
+                }
+              ]
+            },
+            {
+              "kind": "layout",
+              "type": "Row",
+              "gap": "medium",
+              "children": [
+                {
+                  "kind": "existing",
+                  "id": "history-main",
+                  "type": "CalculationHistory"
+                },
+                {
+                  "kind": "existing",
+                  "id": "notes-main",
+                  "type": "NotePad"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "compiledSurface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "layout-2",
+              "layout-3"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "layout-2",
+            "type": "Row",
+            "children": [
+              "calculator-main",
+              "stats-main"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "stats-main",
+            "type": "CalculationStats"
+          },
+          {
+            "id": "layout-3",
+            "type": "Row",
+            "children": [
+              "history-main",
+              "notes-main"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          },
+          {
+            "id": "notes-main",
+            "type": "NotePad"
+          }
+        ]
+      },
+      "actualStructure": "Column(Row(Calculator,CalculationStats),Row(CalculationHistory,NotePad))",
+      "stableBusinessIdsBefore": {
+        "calculator-main": "Calculator",
+        "stats-main": "CalculationStats",
+        "history-main": "CalculationHistory",
+        "notes-main": "NotePad"
+      },
+      "stableBusinessIdsAfter": {
+        "calculator-main": "Calculator",
+        "stats-main": "CalculationStats",
+        "history-main": "CalculationHistory",
+        "notes-main": "NotePad"
+      },
+      "newBusinessIds": {},
+      "errorCode": null,
+      "diagnostics": []
+    },
+    {
+      "name": "权重突出",
+      "prompt": "计算器宽度约为历史记录两倍",
+      "currentFixture": "weighted-highlight.json",
+      "expected": "weight Calculator:CalculationHistory = 2:1, justify=start",
+      "passed": true,
+      "checks": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Row\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\",\"weight\":2},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\",\"weight\":1}]}}",
+      "layoutPlan": {
+        "version": "0.1",
+        "root": {
+          "kind": "layout",
+          "type": "Row",
+          "children": [
+            {
+              "kind": "existing",
+              "id": "calculator-main",
+              "type": "Calculator",
+              "weight": 2
+            },
+            {
+              "kind": "existing",
+              "id": "history-main",
+              "type": "CalculationHistory",
+              "weight": 1
+            }
+          ]
+        }
+      },
+      "compiledSurface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Row",
+            "children": [
+              "calculator-main",
+              "history-main"
+            ]
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator",
+            "weight": 2
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory",
+            "weight": 1
+          }
+        ]
+      },
+      "actualStructure": "Row(Calculator,CalculationHistory)",
+      "stableBusinessIdsBefore": {
+        "calculator-main": "Calculator",
+        "history-main": "CalculationHistory"
+      },
+      "stableBusinessIdsAfter": {
+        "calculator-main": "Calculator",
+        "history-main": "CalculationHistory"
+      },
+      "newBusinessIds": {},
+      "errorCode": null,
+      "diagnostics": []
+    },
+    {
+      "name": "重复组件",
+      "prompt": "再添加一个独立计算器",
+      "currentFixture": "top-bottom.json",
+      "expected": "two Calculator leaves; preserve the existing Calculator ID",
+      "passed": true,
+      "checks": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "rawLayoutPlan": "{\n  \"version\": \"0.1\",\n  \"root\": {\n    \"kind\": \"layout\",\n    \"type\": \"Column\",\n    \"gap\": \"medium\",\n    \"children\": [\n      {\n        \"kind\": \"existing\",\n        \"id\": \"calculator-main\",\n        \"type\": \"Calculator\"\n      },\n      {\n        \"kind\": \"existing\",\n        \"id\": \"history-main\",\n        \"type\": \"CalculationHistory\"\n      },\n      {\n        \"kind\": \"new\",\n        \"type\": \"Calculator\"\n      }\n    ]\n  }\n}",
+      "layoutPlan": {
+        "version": "0.1",
+        "root": {
+          "kind": "layout",
+          "type": "Column",
+          "gap": "medium",
+          "children": [
+            {
+              "kind": "existing",
+              "id": "calculator-main",
+              "type": "Calculator"
+            },
+            {
+              "kind": "existing",
+              "id": "history-main",
+              "type": "CalculationHistory"
+            },
+            {
+              "kind": "new",
+              "type": "Calculator"
+            }
+          ]
+        }
+      },
+      "compiledSurface": {
+        "version": "0.1",
+        "surfaceId": "main",
+        "root": "layout-1",
+        "nodes": [
+          {
+            "id": "layout-1",
+            "type": "Column",
+            "children": [
+              "calculator-main",
+              "history-main",
+              "calculator-1"
+            ],
+            "gap": "medium"
+          },
+          {
+            "id": "calculator-main",
+            "type": "Calculator"
+          },
+          {
+            "id": "history-main",
+            "type": "CalculationHistory"
+          },
+          {
+            "id": "calculator-1",
+            "type": "Calculator"
+          }
+        ]
+      },
+      "actualStructure": "Column(Calculator,CalculationHistory,Calculator)",
+      "stableBusinessIdsBefore": {
+        "calculator-main": "Calculator",
+        "history-main": "CalculationHistory"
+      },
+      "stableBusinessIdsAfter": {
+        "calculator-main": "Calculator",
+        "history-main": "CalculationHistory",
+        "calculator-1": "Calculator"
+      },
+      "newBusinessIds": {
+        "calculator-1": "Calculator"
+      },
+      "errorCode": null,
+      "diagnostics": []
+    },
+    {
+      "name": "不支持布局",
+      "prompt": "用 Grid，让历史记录跨两列并支持响应式断点",
+      "currentFixture": "top-bottom.json",
+      "expected": "unsupported_layout",
+      "passed": true,
+      "checks": [
+        true
+      ],
+      "rawLayoutPlan": "{\"version\":\"0.1\",\"root\":{\"kind\":\"layout\",\"type\":\"Grid\",\"children\":[{\"kind\":\"existing\",\"id\":\"calculator-main\",\"type\":\"Calculator\"},{\"kind\":\"existing\",\"id\":\"history-main\",\"type\":\"CalculationHistory\"}],\"gap\":\"medium\"}}",
+      "layoutPlan": {
+        "version": "0.1",
+        "root": {
+          "kind": "layout",
+          "type": "Grid",
+          "children": [
+            {
+              "kind": "existing",
+              "id": "calculator-main",
+              "type": "Calculator"
+            },
+            {
+              "kind": "existing",
+              "id": "history-main",
+              "type": "CalculationHistory"
+            }
+          ],
+          "gap": "medium"
+        }
+      },
+      "compiledSurface": null,
+      "actualStructure": null,
+      "stableBusinessIdsBefore": {
+        "calculator-main": "Calculator",
+        "history-main": "CalculationHistory"
+      },
+      "stableBusinessIdsAfter": {
+        "calculator-main": "Calculator",
+        "history-main": "CalculationHistory"
+      },
+      "newBusinessIds": {},
+      "errorCode": "unsupported_layout",
+      "diagnostics": [
+        "SurfaceSpec v0 cannot express layout type Grid"
+      ]
+    }
+  ]
+}

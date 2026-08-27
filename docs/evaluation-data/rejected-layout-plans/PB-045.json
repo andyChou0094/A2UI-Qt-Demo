@@ -1,0 +1,49 @@
+{
+  "version": "0.1",
+  "root": {
+    "kind": "layout",
+    "type": "Dock",
+    "children": [
+      {
+        "kind": "existing",
+        "id": "stats-main",
+        "type": "CalculationStats"
+      },
+      {
+        "kind": "layout",
+        "type": "Row",
+        "children": [
+          {
+            "kind": "layout",
+            "type": "Column",
+            "children": [
+              {
+                "kind": "existing",
+                "id": "clock-main",
+                "type": "Clock"
+              }
+            ],
+            "weight": 1
+          },
+          {
+            "kind": "layout",
+            "type": "Column",
+            "children": [
+              {
+                "kind": "existing",
+                "id": "calculator-main",
+                "type": "Calculator"
+              },
+              {
+                "kind": "existing",
+                "id": "history-main",
+                "type": "CalculationHistory"
+              }
+            ],
+            "weight": 3
+          }
+        ]
+      }
+    ]
+  }
+}

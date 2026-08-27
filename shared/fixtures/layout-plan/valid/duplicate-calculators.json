@@ -1,0 +1,10 @@
+{
+  "version": "0.1",
+  "root": {
+    "kind": "layout", "type": "Row", "gap": "large", "justify": "spaceBetween",
+    "children": [
+      {"kind": "new", "type": "Calculator"},
+      {"kind": "new", "type": "Calculator"}
+    ]
+  }
+}
